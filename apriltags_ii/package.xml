@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>apriltags_ii</name>
+  <version>0.0.0</version>
+  <description>The apriltags_ii package</description>
+ 
+  <maintainer email="mrsharif@ece.neu.edu">Mohammadreza Sharif</maintainer>
+  <author>Mohammadreza Sharif</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+
+  <build_depend>cmake_modules</build_depend>  
+  <build_depend>libopencv-dev</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  
+  <export>
+  </export>
+</package>

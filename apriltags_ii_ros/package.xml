@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>apriltags_ii_ros</name>
+  <version>0.5.0</version>
+  <description>A package that provides a ROS wrapper for the apriltags C package</description>
+  
+  <!-- Main author -->
+  <maintainer email="mrsharif@ece.neu.edu">Mohammadreza Sharif</maintainer>
+  <author>Mohammadreza Sharif</author>
+  
+  <license>BSD</license>
+
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>apriltags_ii</build_depend>
+  <build_depend>cmake_modules</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_export_depend>apriltags_ii</build_export_depend>
+  <build_export_depend>cmake_modules</build_export_depend>
+  <build_export_depend>cv_bridge</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>image_transport</build_export_depend>
+  <build_export_depend>nodelet</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>tf</build_export_depend>
+  <exec_depend>apriltags_ii</exec_depend>
+  <exec_depend>cmake_modules</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>image_transport</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>tf</exec_depend>
+
+
+  <export>
+    <nodelet plugin="${prefix}/nodelet_plugins.xml" />
+  </export>
+</package>

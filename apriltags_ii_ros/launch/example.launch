@@ -1,0 +1,54 @@
+<launch>
+  <arg name="cam_color" default="_color" />
+  
+  <!-- Assuming a PrimeSense depth camera -->
+  <arg name="ns_cam"   default="/camera/rgb" />
+
+  <node pkg="apriltags_ii_ros" type="apriltag_detector_node" name="apriltag_detector" output="screen">
+    <!-- Remap topic required by the node to custom topics -->
+    <remap from="/image_rect"  to="$(arg ns_cam)/image_rect$(arg cam_color)" />
+    <remap from="/camera_info" to="$(arg ns_cam)/camera_info" />
+
+    <!-- Optional: Subscribe to the compressed stream-->
+    <param name="image_transport" type="str" value="compressed" />
+
+    <!-- Select the tag family: 25h7, 25h9, 36artoolkit, 36h10, or 36h11(default) -->
+    <param name="tag_family" type="str" value="36h11" />
+
+    <!-- Enable projected optical measurements for more accurate tag transformations -->
+    <!-- This exists for backwards compatability and should be left true for new setups -->
+    <param name="projected_optics" type="bool" value="true" />
+
+    <!-- Number of threads to be involved in tag detection -->
+    <param name="threads" type="int" value="8" />
+
+    <!-- Describe the tags -->
+    <rosparam param="tag_descriptions">[
+      {id: 0, size: 0.163513},
+      {id: 1, size: 0.163513, frame_id: a_frame},
+      {id: 2, size: 0.163513, frame_id: tag_2},
+      {id: 3, size: 0.163513},
+      {id: 4, size: 0.163513},
+      {id: 5, size: 0.163513}]
+    </rosparam>
+  </node>
+
+
+  <node name="image_view" pkg="image_view" type="image_view" respawn="true" output="screen">
+    <remap from="image" to="/tag_detections_image"/>
+    <param name="autosize" value="true" />
+  </node>
+</launch>
+
+
+
+<!--
+Other parameters that may be called from the package and their default values:
+  "tag_border": 1
+  "decimate": 1.0
+  "blur": 0.0
+  "debug" false
+  "refine_edges": true
+  "refine_decode": false
+  "refine_pose": false
+-->
