@@ -44,11 +44,11 @@
 
 <!--
 Other parameters that may be called from the package and their default values:
-  "tag_border": 1
-  "decimate": 1.0
-  "blur": 0.0
-  "debug" false
-  "refine_edges": true
-  "refine_decode": false
-  "refine_pose": false
+  "tag_border", 1
+  "decimate", 1.0: Increase the decimation for faster frame rate but a decrease in detection range. 1.0 for intact image input.
+  "blur", 0.0: Add some Gaussian blur to suppress noise but loosing some information.
+  "debug", false
+  "refine_edges", true
+  "refine_decode", false
+  "refine_pose", false
 -->
