@@ -60,7 +60,7 @@ target_link_libraries(apriltag_detector
   ${OpenCV_LIBRARIES}
   ${catkin_LIBRARIES}
 )
-add_dependencies(apriltag_detector apriltags_ros_generate_messages_cpp)
+add_dependencies(apriltag_detector apriltags_ii_ros_generate_messages_cpp)
 
 
 add_library(apriltag_detector_nodelet src/apriltag_detector_nodelet.cpp)
