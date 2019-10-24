@@ -291,7 +291,7 @@ Eigen::Matrix4d AprilTagDetector::getRelativeTransform(double tag_size, double f
   imgPts.push_back(cv::Point2f(p[3][0], p[3][1]));
 
   cv::Mat rvec, tvec;
-  cv::Matx33f cameraMatrix(
+  cv::Matx33d cameraMatrix(
                           fx, 0, px,
                           0, fy, py,
                           0,  0,  1);
